@@ -44,6 +44,7 @@ module.exports = {
       },
       boxShadow: {
         'elevation-xs': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        'elevation-sm': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
         focus:          '0 0 0 3px rgb(13 148 136 / 0.25)',
         'focus-accent': '0 0 0 3px rgb(225 29 72 / 0.25)',
       },
