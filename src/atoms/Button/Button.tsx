@@ -4,17 +4,17 @@ import { cn } from '@/lib/utils'
 import { Spinner } from '../Spinner'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
+  'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none active:scale-[0.97] transition-transform duration-75',
   {
     variants: {
       variant: {
         primary: 'bg-primary-700 text-white hover:bg-primary-800 focus:shadow-focus',
-        secondary: 'bg-white text-neutral-700 border border-neutral-200 hover:bg-neutral-50',
-        ghost: 'bg-transparent text-neutral-700 hover:bg-neutral-100',
-        soft: 'bg-primary-50 text-primary-700 hover:bg-primary-100',
+        secondary: 'bg-white text-neutral-700 border border-neutral-200 hover:bg-neutral-50 focus:shadow-focus',
+        ghost: 'bg-transparent text-neutral-700 hover:bg-neutral-100 focus:shadow-focus',
+        soft: 'bg-primary-50 text-primary-700 hover:bg-primary-100 focus:shadow-focus',
         destructive: 'bg-accent-600 text-white hover:bg-accent-700 focus:shadow-focus-accent',
         'destructive-ghost': 'bg-transparent text-accent-600 hover:bg-accent-50 focus:shadow-focus-accent',
-        link: 'bg-transparent text-primary-600 underline-offset-4 hover:underline hover:text-primary-700',
+        link: 'bg-transparent text-primary-600 underline-offset-4 hover:underline hover:text-primary-700 focus:shadow-focus',
       },
       size: {
         xs: 'h-7 px-2.5 text-xs gap-1.5',
@@ -47,6 +47,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         disabled={disabled || loading}
+        aria-busy={loading || undefined}
         className={cn(
           buttonVariants({ variant, size }),
           fullWidth && 'w-full',

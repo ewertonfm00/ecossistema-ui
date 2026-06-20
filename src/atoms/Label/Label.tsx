@@ -22,7 +22,7 @@ export function Label({ variant = 'default', htmlFor, children, className, ...pr
     >
       {children}
       {variant === 'required' && (
-        <span className="ml-0.5 text-error-500">*</span>
+        <span className="ml-0.5 text-accent-600">*</span>
       )}
       {variant === 'optional' && (
         <span className="ml-1 text-neutral-400">(opcional)</span>

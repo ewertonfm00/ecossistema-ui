@@ -11,10 +11,10 @@ export interface BadgeProps {
 const variantSoftClasses: Record<string, string> = {
   default: 'bg-neutral-100 text-neutral-700',
   primary: 'bg-primary-100 text-primary-700',
-  success: 'bg-success-50 text-green-700',
-  warning: 'bg-warning-50 text-yellow-700',
-  error: 'bg-error-50 text-red-700',
-  info: 'bg-info-50 text-blue-700',
+  success: 'bg-success-50 text-success-600',
+  warning: 'bg-warning-50 text-warning-600',
+  error: 'bg-error-50 text-error-600',
+  info: 'bg-info-50 text-info-500',
 }
 
 const variantFilledClasses: Record<string, string> = {
@@ -29,10 +29,10 @@ const variantFilledClasses: Record<string, string> = {
 const variantOutlineClasses: Record<string, string> = {
   default: 'bg-transparent text-neutral-600 border border-neutral-200',
   primary: 'bg-transparent text-primary-600 border border-primary-200',
-  success: 'bg-transparent text-green-700 border border-success-500',
-  warning: 'bg-transparent text-yellow-700 border border-warning-500',
-  error: 'bg-transparent text-red-700 border border-error-500',
-  info: 'bg-transparent text-blue-700 border border-info-500',
+  success: 'bg-transparent text-success-600 border border-success-500',
+  warning: 'bg-transparent text-warning-600 border border-warning-500',
+  error: 'bg-transparent text-error-600 border border-error-500',
+  info: 'bg-transparent text-info-500 border border-info-500',
 }
 
 const sizeClasses = {

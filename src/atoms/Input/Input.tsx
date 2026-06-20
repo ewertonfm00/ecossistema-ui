@@ -27,11 +27,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const effectiveState = disabled ? 'disabled' : state
 
     const inputClass = cn(
-      'w-full border rounded-md outline-none transition-shadow placeholder:text-neutral-400',
+      'w-full border rounded-md outline-none transition-shadow placeholder:text-neutral-400 bg-white',
       sizeClasses[size],
       stateClasses[effectiveState],
       leftIcon && 'pl-9',
       rightIcon && 'pr-9',
+      leftAddon && 'rounded-l-none',
+      rightAddon && 'rounded-r-none',
       className,
     )
 

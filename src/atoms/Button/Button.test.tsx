@@ -37,4 +37,34 @@ describe('Button', () => {
     render(<Button size="lg">Large</Button>)
     expect(screen.getByRole('button')).toHaveClass('h-11')
   })
+
+  it('secondary variant has focus ring', () => {
+    render(<Button variant="secondary">Cancelar</Button>)
+    expect(screen.getByRole('button')).toHaveClass('focus:shadow-focus')
+  })
+
+  it('ghost variant has focus ring', () => {
+    render(<Button variant="ghost">Ghost</Button>)
+    expect(screen.getByRole('button')).toHaveClass('focus:shadow-focus')
+  })
+
+  it('soft variant has focus ring', () => {
+    render(<Button variant="soft">Soft</Button>)
+    expect(screen.getByRole('button')).toHaveClass('focus:shadow-focus')
+  })
+
+  it('link variant has focus ring', () => {
+    render(<Button variant="link">Link</Button>)
+    expect(screen.getByRole('button')).toHaveClass('focus:shadow-focus')
+  })
+
+  it('sets aria-busy when loading', () => {
+    render(<Button loading>Carregando</Button>)
+    expect(screen.getByRole('button')).toHaveAttribute('aria-busy', 'true')
+  })
+
+  it('has active scale class for press feedback', () => {
+    render(<Button>Pressionar</Button>)
+    expect(screen.getByRole('button')).toHaveClass('active:scale-[0.97]')
+  })
 })
