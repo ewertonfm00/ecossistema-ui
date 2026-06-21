@@ -18,7 +18,7 @@
 | **00 — Foundation** | Átomos base + moléculas core — building blocks de 100% das telas | 0.2 (7 átomos) · 0.3 (4 moléculas) | ✅ Done |
 | **01 — Componentes Estendidos** | Átomos de formulário avançado + organismos de layout | 0.3b (8 átomos médios) · 0.4 (4 organismos) | ✅ Done |
 | **02 — Developer Experience** | Storybook + documentação interativa + visual regression | 0.5 (Storybook + stories) | ✅ Done |
-| **03 — Integração e Release** | Build de distribuição + integração nos módulos + page compositions | 1.0 · 1.1 · 1.2 | Draft |
+| **03 — Integração e Release** | Build de distribuição + integração nos módulos + page compositions | 1.0 · 1.1 · 1.2 | ✅ Done |
 | **04 — Componentes Avançados** | Modal, Drawer, ToastProvider, DatePicker, Select customizado, Tooltip com teclado | 2.0 · 2.1 · 2.2 | Draft |
 | **05 — Responsividade** | AppShell mobile, sidebar drawer, breakpoints nos organismos | 3.0 | Draft |
 
