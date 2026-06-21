@@ -42,3 +42,21 @@ export const AllPositions: Story = {
     </div>
   ),
 }
+
+export const FocusTrigger: Story = {
+  name: 'Focus Trigger',
+  args: {
+    content: 'Abre com foco (Tab)',
+    trigger: 'focus',
+    children: <button className="px-3 py-1.5 bg-neutral-100 rounded text-sm">Dê Tab aqui</button>,
+  },
+}
+
+export const BothTrigger: Story = {
+  name: 'Both (Hover + Focus)',
+  args: {
+    content: 'Abre em hover E em foco',
+    trigger: 'both',
+    children: <button className="px-3 py-1.5 bg-neutral-100 rounded text-sm">Hover ou Tab</button>,
+  },
+}

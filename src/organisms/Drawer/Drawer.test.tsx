@@ -1,0 +1,64 @@
+import { render, screen, fireEvent } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { Drawer } from './Drawer'
+import { Button } from '@/atoms/Button/Button'
+
+function Wrapper({
+  open = true,
+  onClose = () => {},
+}: {
+  open?: boolean
+  onClose?: () => void
+}) {
+  return (
+    <Drawer
+      open={open}
+      onClose={onClose}
+      title="Título do Drawer"
+      footer={
+        <Button variant="primary" onClick={onClose}>
+          OK
+        </Button>
+      }
+    >
+      <p>Conteúdo do drawer</p>
+      <input data-testid="input-dentro" />
+    </Drawer>
+  )
+}
+
+describe('Drawer', () => {
+  it('renderiza quando open=true', () => {
+    render(<Wrapper open={true} />)
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+    expect(screen.getByText('Título do Drawer')).toBeInTheDocument()
+  })
+
+  it('não renderiza quando open=false', () => {
+    render(<Wrapper open={false} />)
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('tem aria-labelledby apontando para o título', () => {
+    render(<Wrapper />)
+    const dialog = screen.getByRole('dialog')
+    const labelledBy = dialog.getAttribute('aria-labelledby')
+    expect(labelledBy).toBeTruthy()
+    const title = document.getElementById(labelledBy!)
+    expect(title?.textContent).toBe('Título do Drawer')
+  })
+
+  it('chama onClose ao pressionar Escape', async () => {
+    const onClose = vi.fn()
+    render(<Wrapper onClose={onClose} />)
+    await userEvent.keyboard('{Escape}')
+    expect(onClose).toHaveBeenCalledTimes(1)
+  })
+
+  it('chama onClose ao clicar no overlay', () => {
+    const onClose = vi.fn()
+    render(<Wrapper onClose={onClose} />)
+    fireEvent.click(screen.getByTestId('drawer-overlay'))
+    expect(onClose).toHaveBeenCalledTimes(1)
+  })
+})

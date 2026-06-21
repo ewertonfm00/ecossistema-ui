@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { Tooltip } from './Tooltip'
 
 describe('Tooltip', () => {
@@ -26,5 +27,36 @@ describe('Tooltip', () => {
   it('applies top-full class when position=bottom', () => {
     render(<Tooltip content="Hint" position="bottom"><button>btn</button></Tooltip>)
     expect(screen.getByRole('tooltip', { hidden: true })).toHaveClass('top-full')
+  })
+
+  it('trigger="focus": tooltip visível ao dar focus', async () => {
+    render(
+      <Tooltip content="Focus tooltip" trigger="focus">
+        <button>focusable</button>
+      </Tooltip>
+    )
+    const tooltip = screen.getByRole('tooltip', { hidden: true })
+    expect(tooltip).toHaveClass('invisible')
+    await userEvent.tab()
+    expect(tooltip).toHaveClass('visible')
+    expect(tooltip).not.toHaveClass('invisible')
+  })
+
+  it('trigger="both": tooltip visível ao dar focus', async () => {
+    render(
+      <Tooltip content="Both tooltip" trigger="both">
+        <button>target</button>
+      </Tooltip>
+    )
+    const tooltip = screen.getByRole('tooltip', { hidden: true })
+    await userEvent.tab()
+    expect(tooltip).toHaveClass('visible')
+  })
+
+  it('trigger="hover" (padrão): comportamento inalterado — tooltip no DOM com invisible', () => {
+    render(<Tooltip content="Default"><button>btn</button></Tooltip>)
+    const tooltip = screen.getByRole('tooltip', { hidden: true })
+    expect(tooltip).toHaveClass('invisible')
+    expect(tooltip).toHaveClass('group-hover:visible')
   })
 })
