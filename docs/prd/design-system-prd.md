@@ -16,8 +16,11 @@
 | Épico | Descrição | Stories | Status |
 |-------|-----------|---------|--------|
 | **00 — Foundation** | Átomos base + moléculas core — building blocks de 100% das telas | 0.2 (7 átomos) · 0.3 (4 moléculas) | ✅ Done |
-| **01 — Componentes Estendidos** | Átomos de formulário avançado + organismos de layout | 0.3b (8 átomos médios) · 0.4 (4 organismos) | Draft |
-| **02 — Developer Experience** | Storybook + documentação interativa + visual regression | 0.5 (Storybook + stories) | Draft |
+| **01 — Componentes Estendidos** | Átomos de formulário avançado + organismos de layout | 0.3b (8 átomos médios) · 0.4 (4 organismos) | ✅ Done |
+| **02 — Developer Experience** | Storybook + documentação interativa + visual regression | 0.5 (Storybook + stories) | ✅ Done |
+| **03 — Integração e Release** | Build de distribuição + integração nos módulos + page compositions | 1.0 · 1.1 · 1.2 | Draft |
+| **04 — Componentes Avançados** | Modal, Drawer, ToastProvider, DatePicker, Select customizado, Tooltip com teclado | 2.0 · 2.1 · 2.2 | Draft |
+| **05 — Responsividade** | AppShell mobile, sidebar drawer, breakpoints nos organismos | 3.0 | Draft |
 
 ---
 
@@ -57,5 +60,8 @@
 | Marco | Épico | Estimativa | Bloqueante para |
 |-------|-------|-----------|----------------|
 | M0.5 | 00 — Foundation | ✅ Done | Login + formulários dos módulos |
-| M1.5 | 01 — Componentes Estendidos | 2 sprints | Dashboards e layouts dos módulos |
-| M2.0 | 02 — Developer Experience | 1 sprint | Onboarding de novos devs no ecossistema |
+| M1.5 | 01 — Componentes Estendidos | ✅ Done | Dashboards e layouts dos módulos |
+| M2.0 | 02 — Developer Experience | ✅ Done | Onboarding de novos devs no ecossistema |
+| M3.0 | 03 — Integração e Release | 2 sprints | Uso real nos módulos sem depender de src/ TypeScript |
+| M4.0 | 04 — Componentes Avançados | 3 sprints | Formulários complexos, modais, notificações robustas |
+| M5.0 | 05 — Responsividade | 2 sprints | Suporte mobile nos módulos do ecossistema |
