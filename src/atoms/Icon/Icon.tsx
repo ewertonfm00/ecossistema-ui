@@ -1,5 +1,5 @@
 import {
-  AlertCircle, AlertTriangle, Check, CheckCircle2, ChevronDown, ChevronRight,
+  AlertCircle, AlertTriangle, Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight,
   Eye, EyeOff, Info, Loader2, Search, Shield, Sparkles,
   User, X, XCircle, Menu, Bell, Settings, LogOut,
   MoreHorizontal, ArrowLeft, ArrowRight, Plus, Trash2,
@@ -8,7 +8,7 @@ import {
 } from 'lucide-react'
 
 const iconMap: Record<string, LucideIcon> = {
-  AlertCircle, AlertTriangle, Check, CheckCircle2, ChevronDown, ChevronRight,
+  AlertCircle, AlertTriangle, Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight,
   Eye, EyeOff, Info, Loader2, Search, Shield, Sparkles,
   User, X, XCircle, Menu, Bell, Settings, LogOut,
   MoreHorizontal, ArrowLeft, ArrowRight, Plus, Trash2,
