@@ -33,9 +33,9 @@ export function DataTable<T extends object>({
 
   return (
     <div className={cn('overflow-hidden rounded-lg border border-neutral-200', className)}>
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead className="bg-neutral-50 border-b border-neutral-200">
+      <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
+        <table className="min-w-full text-sm">
+          <thead className="bg-neutral-50 border-b border-neutral-200 sticky top-0 z-10">
             <tr>
               {columns.map(col => (
                 <th

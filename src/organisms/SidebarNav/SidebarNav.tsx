@@ -14,16 +14,18 @@ export interface SidebarNavProps {
   logo?: React.ReactNode
   collapsed?: boolean
   onToggleCollapse?: () => void
+  compact?: boolean
   className?: string
 }
 
-export function SidebarNav({ items, logo, collapsed, onToggleCollapse, className }: SidebarNavProps) {
+export function SidebarNav({ items, logo, collapsed, onToggleCollapse, compact, className }: SidebarNavProps) {
+  const isCompact = collapsed || compact
   return (
     <nav
       aria-label="Menu principal"
       className={cn(
         'flex flex-col h-full bg-white border-r border-neutral-200 transition-all duration-300',
-        collapsed ? 'w-16' : 'w-60',
+        isCompact ? 'w-16' : 'w-60',
         className
       )}
     >
@@ -37,6 +39,7 @@ export function SidebarNav({ items, logo, collapsed, onToggleCollapse, className
           <li key={item.href}>
             <a
               href={item.href}
+              title={isCompact ? item.label : undefined}
               aria-current={item.active ? 'page' : undefined}
               className={cn(
                 'flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors',
@@ -47,21 +50,23 @@ export function SidebarNav({ items, logo, collapsed, onToggleCollapse, className
               )}
             >
               <Icon name={item.icon} size={18} className="flex-shrink-0" />
-              <span className={cn(collapsed && 'sr-only')}>{item.label}</span>
+              <span className={cn(isCompact && 'sr-only')}>{item.label}</span>
             </a>
           </li>
         ))}
       </ul>
-      <div className="p-2 border-t border-neutral-100">
-        <button
-          onClick={onToggleCollapse}
-          aria-expanded={!collapsed}
-          aria-label={collapsed ? 'Expandir menu' : 'Recolher menu'}
-          className="w-full flex justify-center p-2 rounded-md hover:bg-neutral-100 text-neutral-500"
-        >
-          <Icon name={collapsed ? 'ChevronRight' : 'ChevronLeft'} size={18} />
-        </button>
-      </div>
+      {!compact && (
+        <div className="p-2 border-t border-neutral-100">
+          <button
+            onClick={onToggleCollapse}
+            aria-expanded={!collapsed}
+            aria-label={collapsed ? 'Expandir menu' : 'Recolher menu'}
+            className="w-full flex justify-center p-2 rounded-md hover:bg-neutral-100 text-neutral-500"
+          >
+            <Icon name={collapsed ? 'ChevronRight' : 'ChevronLeft'} size={18} />
+          </button>
+        </div>
+      )}
     </nav>
   )
 }

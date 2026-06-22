@@ -21,22 +21,42 @@ export function PageHeader({ title, breadcrumbs, actions, className }: PageHeade
             <ol className="flex items-center gap-1 text-sm text-neutral-500 mb-1">
               {breadcrumbs.map((item, i) => {
                 const isLast = i === breadcrumbs.length - 1
+                const isFirstOfMany = i === 0 && breadcrumbs.length > 2
+                const isMiddle = i > 0 && !isLast
+
+                if (isMiddle) {
+                  return (
+                    <li key={i} className="hidden md:flex items-center gap-1">
+                      <span aria-hidden="true" className="text-neutral-300">/</span>
+                      {item.href ? (
+                        <a href={item.href} className="hover:text-neutral-900 hover:underline">{item.label}</a>
+                      ) : (
+                        <span>{item.label}</span>
+                      )}
+                    </li>
+                  )
+                }
+
                 return (
                   <li key={i} className="flex items-center gap-1">
                     {i > 0 && (
-                      <span aria-hidden="true" className="text-neutral-300">
-                        /
-                      </span>
+                      <span aria-hidden="true" className="text-neutral-300">/</span>
+                    )}
+                    {isFirstOfMany && (
+                      <span aria-hidden="true" className="md:hidden text-neutral-400">…</span>
                     )}
                     {isLast || !item.href ? (
                       <span
                         aria-current={isLast ? 'page' : undefined}
-                        className={isLast ? 'text-neutral-900' : ''}
+                        className={cn(isLast ? 'text-neutral-900' : '', isFirstOfMany ? 'hidden md:inline' : '')}
                       >
                         {item.label}
                       </span>
                     ) : (
-                      <a href={item.href} className="hover:text-neutral-900 hover:underline">
+                      <a
+                        href={item.href}
+                        className={cn('hover:text-neutral-900 hover:underline', isFirstOfMany ? 'hidden md:inline' : '')}
+                      >
                         {item.label}
                       </a>
                     )}

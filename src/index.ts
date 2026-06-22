@@ -60,3 +60,7 @@ export { Drawer } from './organisms/Drawer'
 export type { DrawerProps } from './organisms/Drawer'
 export { ToastProvider, useToast } from './organisms/ToastProvider'
 export type { ToastProviderProps, Toast as ToastItem } from './organisms/ToastProvider'
+
+// Hooks
+export { useSidebar } from './hooks/useSidebar'
+export type { UseSidebarReturn } from './hooks/useSidebar'

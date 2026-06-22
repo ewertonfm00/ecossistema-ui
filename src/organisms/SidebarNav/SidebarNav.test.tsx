@@ -44,4 +44,11 @@ describe('SidebarNav', () => {
     const disabledLink = screen.getByRole('link', { name: /Bloqueado/i })
     expect(disabledLink).toHaveClass('pointer-events-none')
   })
+
+  it('compact=true oculta os labels dos itens com sr-only', () => {
+    const singleItem = [{ label: 'Início', icon: 'Home', href: '/' }]
+    render(<SidebarNav items={singleItem} compact={true} />)
+    const label = screen.getByText('Início')
+    expect(label.className).toContain('sr-only')
+  })
 })

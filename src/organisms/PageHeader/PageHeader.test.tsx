@@ -40,4 +40,18 @@ describe('PageHeader', () => {
     )
     expect(screen.getByRole('button', { name: 'Nova Ação' })).toBeInTheDocument()
   })
+
+  it('com 3+ breadcrumbs, itens do meio têm classe hidden md:flex', () => {
+    const breadcrumbs3: BreadcrumbItem[] = [
+      { label: 'Home', href: '/' },
+      { label: 'Clientes', href: '/clientes' },
+      { label: 'Novo' },
+    ]
+    render(<PageHeader title="Novo" breadcrumbs={breadcrumbs3} />)
+    // O item do meio (Clientes) deve estar dentro de li.hidden.md:flex
+    const listItems = document.querySelectorAll('ol li')
+    // Middle item (index 1) should have hidden class
+    expect(listItems[1].className).toContain('hidden')
+    expect(listItems[1].className).toContain('md:flex')
+  })
 })
