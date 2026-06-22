@@ -44,6 +44,8 @@ export { DatePicker } from './molecules/DatePicker'
 export type { DatePickerProps } from './molecules/DatePicker'
 export { SelectCustom } from './molecules/SelectCustom'
 export type { SelectCustomProps, SelectCustomOption } from './molecules/SelectCustom'
+export { Tabs, TabList, Tab, TabPanel } from './molecules/Tabs/Tabs'
+export type { TabsProps, TabListProps, TabProps, TabPanelProps } from './molecules/Tabs/Tabs'
 
 // Organisms
 export { AppShell } from './organisms/AppShell'

@@ -21,7 +21,12 @@
 | **03 — Integração e Release** | Build de distribuição + integração nos módulos + page compositions | 1.0 · 1.1 · 1.2 | ✅ Done |
 | **04 — Componentes Avançados** | Modal, Drawer, ToastProvider, DatePicker, Select customizado, Tooltip com teclado | 2.0 · 2.1 · 2.2 | ✅ Done |
 | **05 — Responsividade** | AppShell mobile, sidebar drawer, breakpoints nos organismos | 3.0 | ✅ Done |
-| **06 — DataTable Avançado** | Sorting, filtros por coluna, seleção de linhas, export CSV, estado vazio com ação | 4.0 | Draft |
+| **06 — DataTable Avançado** | Sorting, filtros por coluna, seleção de linhas, export CSV, estado vazio com ação | 4.0 | ✅ Done |
+| **07 — Tabs & Stepper** | Navegação por abas (Tabs controladas/uncontroladas) e wizard multi-step (Stepper com estados completed/current/pending) | 5.0 · 5.1 | Planned |
+| **08 — Charts** | Gráficos para dashboards: BarChart, LineChart, PieChart/DonutChart, AreaChart — via recharts | 6.0 | Planned |
+| **09 — Formulários Avançados** | FileUpload (drag-and-drop, preview, validação), MultiSelect (tags), RangeSlider | 7.0 | Planned |
+| **10 — Feedback & Status** | ProgressBar, StepIndicator visual, EmptyState standalone padronizado | 8.0 | Planned |
+| **11 — Calendar & Agenda** | CalendarPicker (month view), DateRangePicker (start/end), AgendaView semanal | 9.0 | Planned |
 
 ---
 
@@ -66,4 +71,9 @@
 | M3.0 | 03 — Integração e Release | 2 sprints | Uso real nos módulos sem depender de src/ TypeScript |
 | M4.0 | 04 — Componentes Avançados | 3 sprints | Formulários complexos, modais, notificações robustas |
 | M5.0 | 05 — Responsividade | ✅ Done | Suporte mobile nos módulos do ecossistema |
-| M6.0 | 06 — DataTable Avançado | 2 sprints | Listas de clientes, agendamentos, transações financeiras com interação real |
+| M6.0 | 06 — DataTable Avançado | ✅ Done | Listas de clientes, agendamentos, transações financeiras com interação real |
+| M7.0 | 07 — Tabs & Stepper | 2 sprints | Navegação entre seções em todos os módulos + fluxos de cadastro multi-step |
+| M8.0 | 08 — Charts | 3 sprints | Dashboards de métricas em todos os módulos (faturamento, ocupação, performance) |
+| M9.0 | 09 — Formulários Avançados | 2 sprints | Upload de fotos de pacientes (Estética IA), formulários de dados complexos |
+| M10.0 | 10 — Feedback & Status | 1 sprint | Indicadores de progresso em onboardings e fluxos longos |
+| M11.0 | 11 — Calendar & Agenda | 3 sprints | Agendamentos Estética IA M1 (bloqueante para piloto de validação) |

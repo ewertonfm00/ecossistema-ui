@@ -40,16 +40,16 @@ Gestoras de clínicas de estética brasileiras — interface deve ser clínica, 
 - `tsup` — build ESM+CJS+DTS (Story 1.0)
 - `@storybook/react-vite` — documentação visual (Story 0.5)
 
-## Catálogo de componentes (2026-06-21)
-### Átomos (11)
+## Catálogo de componentes (2026-06-22)
+### Átomos (15)
 Button, Input, Label, Badge, Avatar, Icon, Spinner, Checkbox, Radio, Switch, Textarea,
 Select (nativo), Tooltip (trigger: hover/focus/both), Skeleton, Divider
 
 ### Moléculas (6)
 FormField, Card, Alert, Toast (componente), DatePicker, SelectCustom (combobox ARIA)
 
-### Organismos (6)
-AppShell, SidebarNav, PageHeader, DataTable, Modal, Drawer, ToastProvider
+### Organismos (7)
+AppShell, SidebarNav, PageHeader, DataTable (sorting, filtros, seleção, export CSV), Modal, Drawer, ToastProvider
 
 ### Pages (5)
 LoginPage, DashboardPage, ListingPage, FormPage, EmptyPage
