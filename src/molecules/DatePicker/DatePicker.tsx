@@ -29,7 +29,7 @@ function formatDate(date: Date | null | undefined): string {
 function parseInput(str: string): Date | null {
   const match = str.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)
   if (!match) return null
-  const [, d, m, y] = match
+  const [, d = '', m = '', y = ''] = match
   const date = new Date(+y, +m - 1, +d)
   if (date.getDate() !== +d || date.getMonth() !== +m - 1 || date.getFullYear() !== +y) return null
   return date
@@ -58,7 +58,7 @@ function getCalendarDays(year: number, month: number): CalendarDay[] {
   }
   // Completar até 42 (6 semanas)
   while (days.length < 42) {
-    const last = days[days.length - 1].date
+    const last = days[days.length - 1]?.date ?? new Date()
     const d = new Date(last.getFullYear(), last.getMonth(), last.getDate() + 1)
     days.push({ date: d, currentMonth: false, label: formatDate(d) })
   }

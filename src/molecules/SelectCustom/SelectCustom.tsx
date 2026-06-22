@@ -150,8 +150,11 @@ export function SelectCustom({
     }
   }
 
-  const focusedOptionId = focusedIndex >= 0 && focusedIndex < filteredOptions.length
-    ? `option-${selectId}-${filteredOptions[focusedIndex].value}`
+  const focusedOption = focusedIndex >= 0 && focusedIndex < filteredOptions.length
+    ? filteredOptions[focusedIndex]
+    : undefined
+  const focusedOptionId = focusedOption
+    ? `option-${selectId}-${focusedOption.value}`
     : undefined
 
   function renderTriggerContent() {

@@ -37,6 +37,39 @@ Gestoras de clínicas de estética brasileiras — interface deve ser clínica, 
 - `clsx` + `tailwind-merge` — merge de classes
 - `lucide-react` — ícones (tree-shakeable, MIT)
 - peerDeps: react ^18, react-dom ^18, tailwindcss ^3
+- `tsup` — build ESM+CJS+DTS (Story 1.0)
+- `@storybook/react-vite` — documentação visual (Story 0.5)
+
+## Catálogo de componentes (2026-06-21)
+### Átomos (11)
+Button, Input, Label, Badge, Avatar, Icon, Spinner, Checkbox, Radio, Switch, Textarea,
+Select (nativo), Tooltip (trigger: hover/focus/both), Skeleton, Divider
+
+### Moléculas (6)
+FormField, Card, Alert, Toast (componente), DatePicker, SelectCustom (combobox ARIA)
+
+### Organismos (6)
+AppShell, SidebarNav, PageHeader, DataTable, Modal, Drawer, ToastProvider
+
+### Pages (5)
+LoginPage, DashboardPage, ListingPage, FormPage, EmptyPage
+
+## Padrões arquiteturais estabelecidos
+- Barrel index.ts por componente: `export { X } from './X'` + `export type { XProps } from './X'`
+- cn() utility (clsx + tailwind-merge) em todo componente para merge de classes
+- ReactDOM.createPortal para componentes de overlay (Modal, Drawer, ToastProvider)
+- Context API para estado global de UI (useToast / ToastProvider)
+- useId() para IDs ARIA (aria-labelledby, aria-describedby) — evita colisões em SSR
+- handleContainerBlur com relatedTarget para detectar click fora de dropdowns
+- vi.useFakeTimers() + afterEach cleanup para testes de timers
+
+## Nomeclatura de tipos (convenções para evitar colisões no barrel)
+- SelectOption — tipo do átomo Select nativo (src/atoms/Select)
+- SelectCustomOption — tipo do SelectCustom molecule (src/molecules/SelectCustom)
+- Toast (interface) → exportado como ToastItem no barrel para não conflitar com componente Toast
+- SidebarNavItem — exportado junto com SidebarNavProps
+- BreadcrumbItem — exportado junto com PageHeaderProps
+- DataTableColumn — exportado junto com DataTableProps
 
 ## Configuração Tailwind nos módulos consumidores
 ```js

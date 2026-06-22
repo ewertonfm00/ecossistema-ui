@@ -43,7 +43,7 @@ export function Modal({
     const timeout = setTimeout(() => {
       const focusable = panelRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE)
       if (focusable && focusable.length > 0) {
-        focusable[0].focus()
+        focusable[0]?.focus()
       } else {
         panelRef.current?.focus()
       }
@@ -61,10 +61,10 @@ export function Modal({
       const last = focusable[focusable.length - 1]
       if (e.shiftKey && document.activeElement === first) {
         e.preventDefault()
-        last.focus()
+        last?.focus()
       } else if (!e.shiftKey && document.activeElement === last) {
         e.preventDefault()
-        first.focus()
+        first?.focus()
       }
     }
 
