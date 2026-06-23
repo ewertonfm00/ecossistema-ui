@@ -64,6 +64,15 @@ export { Drawer } from './organisms/Drawer'
 export type { DrawerProps } from './organisms/Drawer'
 export { ToastProvider, useToast } from './organisms/ToastProvider'
 export type { ToastProviderProps, Toast as ToastItem } from './organisms/ToastProvider'
+export { BarChart, LineChart, PieChart, AreaChart } from './organisms/Charts/Charts'
+export type {
+  BarChartProps,
+  LineChartProps,
+  PieChartProps,
+  AreaChartProps,
+  ChartDataPoint,
+  PieDataPoint,
+} from './organisms/Charts/Charts'
 
 // Hooks
 export { useSidebar } from './hooks/useSidebar'
