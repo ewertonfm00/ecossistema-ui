@@ -46,6 +46,8 @@ export { SelectCustom } from './molecules/SelectCustom'
 export type { SelectCustomProps, SelectCustomOption } from './molecules/SelectCustom'
 export { Tabs, TabList, Tab, TabPanel } from './molecules/Tabs/Tabs'
 export type { TabsProps, TabListProps, TabProps, TabPanelProps } from './molecules/Tabs/Tabs'
+export { Stepper, StepList, Step, StepPanel } from './molecules/Stepper/Stepper'
+export type { StepperProps, StepListProps, StepProps, StepPanelProps } from './molecules/Stepper/Stepper'
 
 // Organisms
 export { AppShell } from './organisms/AppShell'
