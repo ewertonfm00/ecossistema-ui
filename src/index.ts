@@ -74,6 +74,13 @@ export type {
   PieDataPoint,
 } from './organisms/Charts/Charts'
 
+export { FileUpload } from './molecules/FileUpload/FileUpload'
+export type { FileUploadProps } from './molecules/FileUpload/FileUpload'
+export { MultiSelect } from './molecules/MultiSelect/MultiSelect'
+export type { MultiSelectProps, MultiSelectOption } from './molecules/MultiSelect/MultiSelect'
+export { RangeSlider } from './molecules/RangeSlider/RangeSlider'
+export type { RangeSliderProps } from './molecules/RangeSlider/RangeSlider'
+
 // Hooks
 export { useSidebar } from './hooks/useSidebar'
 export type { UseSidebarReturn } from './hooks/useSidebar'
