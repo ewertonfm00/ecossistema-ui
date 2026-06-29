@@ -4,4 +4,6 @@ dist/
 *.tsbuildinfo
 .env
 .env.local
-.claude/
+.claude/settings.local.json
+.claude/session-plan.md
+
