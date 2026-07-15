@@ -1,4 +1,4 @@
-node_modules/
+﻿node_modules/
 dist/
 .cache/
 *.tsbuildinfo
@@ -7,3 +7,27 @@ dist/
 .claude/settings.local.json
 .claude/session-plan.md
 
+# >>> AIOX PRO squads (gerado por install-pro-squads.ps1 - nao editar a mao) >>>
+squads/aiox-design/
+squads/aiox-sop/
+squads/brand/
+squads/claude-code-mastery/
+squads/copy/
+squads/data/
+squads/db-sage/
+squads/design-ops/
+squads/design-system/
+squads/etl-ops/
+squads/hormozi/
+squads/hub-manager/
+squads/n8n-white-ops/
+squads/research/
+squads/revenue-os/
+squads/sales-fran/
+squads/slides-creator/
+squads/spy/
+squads/squad-creator/
+squads/squad-creator-pro/
+squads/storytelling/
+squads/webapp-defender/
+# <<< AIOX PRO squads <<<
