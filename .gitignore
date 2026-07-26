@@ -1,4 +1,4 @@
-﻿node_modules/
+node_modules/
 dist/
 .cache/
 *.tsbuildinfo
@@ -31,3 +31,26 @@ squads/squad-creator-pro/
 squads/storytelling/
 squads/webapp-defender/
 # <<< AIOX PRO squads <<<
+
+# Environment & Secrets (AIOX)
+.env.*.local
+*.key
+*.pem
+
+# Dependencies (AIOX)
+node_modules
+
+# Build & Logs (AIOX)
+build/
+*.log
+logs/
+
+# IDE & OS (AIOX)
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# AIOX Local (AIOX)
+.aiox-core/local/
+.aiox/install-log.txt
