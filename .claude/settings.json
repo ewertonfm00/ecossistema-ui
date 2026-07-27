@@ -99,7 +99,13 @@
       "Edit(bin/aiox.js)",
       "Write(bin/aiox.js)",
       "Edit(bin/aiox-init.js)",
-      "Write(bin/aiox-init.js)"
+      "Write(bin/aiox-init.js)",
+      "Edit(.aiox-core/core/install/**)",
+      "Write(.aiox-core/core/install/**)",
+      "Edit(.aiox-core/core/sdc/**)",
+      "Write(.aiox-core/core/sdc/**)",
+      "Edit(.aiox-core/core/security/**)",
+      "Write(.aiox-core/core/security/**)"
     ]
   },
   "language": "english"
