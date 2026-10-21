@@ -73,9 +73,10 @@ export function CalendarPicker({
       Enter: () => { if (focusedDate) handleSelect(focusedDate) },
       ' ': () => { if (focusedDate) handleSelect(focusedDate) },
     }
-    if (e.key in map) {
+    const handler = map[e.key]
+    if (handler) {
       e.preventDefault()
-      map[e.key]()
+      handler()
     }
   }
 

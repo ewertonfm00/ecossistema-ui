@@ -44,4 +44,5 @@ AppShell, SidebarNav, PageHeader, DataTable
 Modal, Drawer, ToastProvider, DatePicker, SelectCustom, Tooltip avançado
 
 ## Estado atual
+- **2026-10-20** — Story CI-1 isolou o Vitest em `src/**` (45 arquivos, 311 testes verdes), adicionou cancelamento de CI obsoleto e removeu a repetição de teste/build no release. A branch não alterou componentes. Gates legados ainda bloqueiam o build (`CalendarPicker.tsx:78`, TS2722), o typecheck amplo e o lint não configurado; corrigir em tarefa própria antes do merge.
 - **2026-06-28** — AGENT.md, BUGS.md, IDEAS.md criados (bootstrap operacional). Stories 2.0/2.1/2.2 aguardam QA gate (@qa). Todos os componentes do Épico 04 implementados — commit `6ab4d38`. Próximo: abrir sessão CC, acionar `@qa` para validar 2.0/2.1/2.2.

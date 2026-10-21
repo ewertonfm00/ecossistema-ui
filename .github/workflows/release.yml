@@ -22,12 +22,12 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm test -- --run
+        run: npm test
 
       - name: Build
         run: npm run build
 
       - name: Publish to npm
-        run: npm publish --access public
+        run: npm publish --ignore-scripts --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

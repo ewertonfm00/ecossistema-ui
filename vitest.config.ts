@@ -8,7 +8,13 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test-setup.ts'],
-    exclude: ['**/node_modules/**', '**/.claude/worktrees/**', '**/dist/**'],
+    include: ['src/**/*.{test,spec}.{ts,tsx}'],
+    exclude: [
+      '**/node_modules/**',
+      '**/.aiox-core/**',
+      '**/.claude/worktrees/**',
+      '**/dist/**',
+    ],
   },
   resolve: {
     alias: { '@': resolve(__dirname, 'src') },

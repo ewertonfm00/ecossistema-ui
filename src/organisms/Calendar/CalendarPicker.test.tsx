@@ -63,4 +63,19 @@ describe('CalendarPicker', () => {
     const todayCell = cells.find(c => c.className.includes('ring'))
     expect(todayCell).toBeTruthy()
   })
+
+  it('ignora teclas sem ação configurada', () => {
+    const onChange = vi.fn()
+    render(<CalendarPicker defaultValue={JUN_15} onChange={onChange} />)
+
+    const event = new KeyboardEvent('keydown', {
+      key: 'Escape',
+      bubbles: true,
+      cancelable: true,
+    })
+    screen.getByRole('grid').dispatchEvent(event)
+
+    expect(event.defaultPrevented).toBe(false)
+    expect(onChange).not.toHaveBeenCalled()
+  })
 })
