@@ -40,7 +40,7 @@ O `vitest.config.ts` não possuía `include` e não excluía `.aiox-core`. A exe
 - [x] Preservar gates visíveis e impedir lifecycle duplicado no release.
 - [x] Executar e registrar validações locais.
 - [x] Revisar diff staged e segurança.
-- [ ] Commitar, enviar e abrir PR sem merge.
+- [x] Commitar, enviar e abrir PR sem merge — PR #1 aberto como draft para `main`.
 
 ## File List
 
@@ -62,6 +62,7 @@ O `vitest.config.ts` não possuía `include` e não excluía `.aiox-core`. A exe
 - YAML/TypeScript: **sintaxe válida** — Prettier 3.4.2 analisou os três arquivos sem erro de parse; apenas reportou estilo não formatado do padrão já existente.
 - `git diff --check`: **PASS**.
 - `git diff origin/main -- src`: **vazio**, confirmando que os bloqueios de produto não foram introduzidos nesta branch.
+- CI remoto do PR #1: testes passaram e o job avançou até o build; falhou no mesmo `CalendarPicker.tsx:78` (`TS2722`) reproduzido localmente. CodeRabbit remoto: **PASS**.
 
 ## Change Log
 
@@ -69,3 +70,4 @@ O `vitest.config.ts` não possuía `include` e não excluía `.aiox-core`. A exe
 |---|---|---|
 | 2026-10-20 | @devops (Gage) | Story criada e configuração inicial implementada |
 | 2026-10-20 | @devops (Gage) | 311 testes passaram; bloqueios preexistentes de build/typecheck/lint registrados sem ampliar escopo |
+| 2026-10-20 | @devops (Gage) | Commit enviado e PR #1 draft aberto; CI remoto confirmou o bloqueio legado de DTS |
