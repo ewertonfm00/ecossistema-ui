@@ -9,11 +9,12 @@
 - **Pacote publicado:** `@ecossistema/ui` — consumido pelos módulos via `npm install`
 
 ## Stack técnica
-- **Build:** tsup (ESM + CJS dual output)
-- **Testes:** Vitest + Testing Library
-- **Storybook:** 8.x (documentação de componentes)
+- **Build:** tsup 9.x (ESM + CJS dual output)
+- **Testes:** Vitest 5.x + Testing Library
+- **Storybook:** 8.6.x (documentação de componentes)
 - **Estilos:** Tailwind CSS (preset customizado `tailwind-preset.js`)
 - **Linguagem:** TypeScript strict
+- **Runtime de CI/release:** Node.js 22
 
 ## Estilo visual — Clínico Premium (DESIGN.md)
 - **Cor primária:** teal `#0D9488`
@@ -44,5 +45,6 @@ AppShell, SidebarNav, PageHeader, DataTable
 Modal, Drawer, ToastProvider, DatePicker, SelectCustom, Tooltip avançado
 
 ## Estado atual
+- **2026-10-24** — Story SEC-1 atualizou a cadeia de desenvolvimento: audit caiu de 19 para 0 vulnerabilidades sem `--force`; Storybook 8.6.19, Vitest 5.0.5, Vite 6.4.5 e tsup 9.0.0 passaram nos gates. CI agora executa audit, lint, typecheck, 312 testes, build do pacote e build Storybook em Node 22. O contrato público Tailwind v3, `tailwind-preset.js`, tokens, componentes e APIs visuais não foram alterados. Branch `task/sec-1-refresh-dev-toolchain` pronta para revisão.
 - **2026-10-20** — Story CI-1 isolou o Vitest em `src/**` (45 arquivos, 311 testes verdes), adicionou cancelamento de CI obsoleto e removeu a repetição de teste/build no release. A branch não alterou componentes. Gates legados ainda bloqueiam o build (`CalendarPicker.tsx:78`, TS2722), o typecheck amplo e o lint não configurado; corrigir em tarefa própria antes do merge.
 - **2026-06-28** — AGENT.md, BUGS.md, IDEAS.md criados (bootstrap operacional). Stories 2.0/2.1/2.2 aguardam QA gate (@qa). Todos os componentes do Épico 04 implementados — commit `6ab4d38`. Próximo: abrir sessão CC, acionar `@qa` para validar 2.0/2.1/2.2.

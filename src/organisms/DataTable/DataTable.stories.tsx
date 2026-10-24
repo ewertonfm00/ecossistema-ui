@@ -221,7 +221,7 @@ export const FullFeatured: Story = {
     pageSize: 8,
     emptyMessage: 'Nenhum usuário encontrado.',
     emptyAction: <Button size="sm">+ Novo Usuário</Button>,
-    actionsColumn: (row: Row) => (
+    actionsColumn: (_row: Row) => (
       <div className="flex items-center justify-end gap-2">
         <Button size="sm" variant="ghost">
           Editar

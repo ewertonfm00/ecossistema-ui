@@ -12,6 +12,14 @@
 
 ---
 
+## [2026-10-24] — Toolchain acumulava 19 vulnerabilidades e Storybook não resolvia imports absolutos
+**Sintoma:** `npm audit` reportava 19 vulnerabilidades na cadeia de desenvolvimento; lint/typecheck não eram gates reproduzíveis e o build estático do Storybook falhava ao resolver imports com `@/`.
+**Causa raiz:** Storybook, Vitest/Vite, tsup e transitivas estavam desatualizados; o typecheck misturava código publicável com testes/stories; o Storybook não compartilhava o alias TypeScript.
+**Correção:** Dependências foram atualizadas seletivamente, transitivas vulneráveis receberam overrides estreitos, CI/release passaram para Node 22, lint/typecheck foram configurados e o alias `@` foi declarado no `viteFinal` do Storybook. Nenhum token, preset Tailwind, componente ou contrato visual foi alterado.
+**Arquivos afetados:** `package.json`, `package-lock.json`, `eslint.config.mjs`, `tsconfig.typecheck.json`, `.storybook/main.ts`, `.github/workflows/ci.yml`, `.github/workflows/release.yml`, arquivos de teste/lint listados na Story SEC-1
+**Status:** ✅ Corrigido — 2026-10-24; branch pronta para revisão
+**Risco de voltar:** Baixo — audit, lint, typecheck, testes, build do pacote e build Storybook agora são gates explícitos de CI.
+
 ## [2026-10-20] — CI coletava testes internos do framework AIOX
 **Sintoma:** O workflow `CI` falhava no step de testes por arquivos dentro de `.aiox-core`, mesmo quando os testes do design system estavam corretos.
 **Causa raiz:** O Vitest não definia `include` para o produto e o `exclude` não cobria `.aiox-core/**`.

@@ -114,7 +114,8 @@ export function SelectCustom({
       case 'Enter':
       case ' ':
         e.preventDefault()
-        open ? closeDropdown() : openDropdown()
+        if (open) closeDropdown()
+        else openDropdown()
         break
       case 'ArrowDown':
         e.preventDefault()
