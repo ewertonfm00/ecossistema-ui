@@ -30,7 +30,7 @@ describe('CalendarPicker', () => {
     const june10 = cells.find(
       c => c.textContent?.trim() === '10' && !c.className.includes('text-neutral-300'),
     )
-    june10 && fireEvent.click(june10)
+    if (june10) fireEvent.click(june10)
     expect(onChange).toHaveBeenCalledTimes(1)
     const called = onChange.mock.calls[0][0] as Date
     expect(called.getDate()).toBe(10)
@@ -48,7 +48,7 @@ describe('CalendarPicker', () => {
     )
     const cells = screen.getAllByRole('gridcell')
     const sunday = cells.find(c => c.getAttribute('aria-disabled') === 'true')
-    sunday && fireEvent.click(sunday)
+    if (sunday) fireEvent.click(sunday)
     expect(onChange).not.toHaveBeenCalled()
   })
 

@@ -19,17 +19,29 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Audit dependencies
+        run: npm audit --audit-level=moderate
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
 
       - name: Run tests
         run: npm test
 
       - name: Build
         run: npm run build
+
+      - name: Build Storybook
+        run: npm run build-storybook
 
       - name: Verify dist artifacts
         run: |

@@ -23,7 +23,7 @@ describe('DateRangePicker', () => {
     render(<DateRangePicker onChange={onChange} value={{ start: null, end: null }} />)
     const cells = screen.getAllByRole('gridcell')
     const day15 = findInMonthCell(cells, '15')
-    day15 && fireEvent.click(day15)
+    if (day15) fireEvent.click(day15)
     expect(onChange).toHaveBeenCalledTimes(1)
     const [arg] = onChange.mock.calls[0]
     expect(arg.start).toBeTruthy()
@@ -35,8 +35,8 @@ describe('DateRangePicker', () => {
     const cells = screen.getAllByRole('gridcell')
     const day5 = findInMonthCell(cells, '5')
     const day20 = findInMonthCell(cells, '20')
-    day5 && fireEvent.click(day5)
-    day20 && fireEvent.click(day20)
+    if (day5) fireEvent.click(day5)
+    if (day20) fireEvent.click(day20)
     const allCells = screen.getAllByRole('gridcell')
     const endCell = allCells.find(c => c.getAttribute('aria-label')?.includes('fim do intervalo'))
     expect(endCell).toBeTruthy()
@@ -50,7 +50,7 @@ describe('DateRangePicker', () => {
 
     const cells1 = screen.getAllByRole('gridcell')
     const day20 = findInMonthCell(cells1, '20')
-    day20 && fireEvent.click(day20)
+    if (day20) fireEvent.click(day20)
 
     expect(onChange).toHaveBeenCalledTimes(1)
     const firstRange = onChange.mock.calls[0][0] as DateRange
@@ -60,7 +60,7 @@ describe('DateRangePicker', () => {
 
     const cells2 = screen.getAllByRole('gridcell')
     const day10 = findInMonthCell(cells2, '10')
-    day10 && fireEvent.click(day10)
+    if (day10) fireEvent.click(day10)
 
     expect(onChange).toHaveBeenCalledTimes(2)
     const secondRange = onChange.mock.calls[1][0] as DateRange
